@@ -6,13 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-    {% block content %}
     <header>
         <h1>hello my name is yAO</h1>
         <a href="{% url 'homepage' %}">Home</a>
         <a href="{% url 'aboutpage' %}">about</a>
         <a href="{% url 'contactpage' %}">Contact</a>
+        <a href="{% url 'postPage' %}">Post</a>
     </header>
+
+    {% block content %}
+    
     {% endblock %}
     
 </body>
