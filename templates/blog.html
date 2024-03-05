@@ -1,0 +1,13 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Blogs Page</h1>
+
+
+    {%for blog in blogpost_list%}
+        <div><a href="{% url 'blogDetailPage' blog.pk %}">{{blog.title}}</a></div>
+    {%endfor%}
+
+{% endblock content %}
+    
