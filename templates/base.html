@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{%static 'style.css' %}">
-    <title>Document</title>
+    <title>Django</title>
 </head>
 <body>
     <header>
@@ -14,8 +14,9 @@
         <a href="{% url 'aboutpage' %}">about</a>|
         <a href="{% url 'contactpage' %}">Contact</a>|
         <a href="{% url 'postPage' %}">Post</a>|
-        <a href="{% url 'blogPage' %}">Blogs</a>
+        <a href="{% url 'blogPage' %}">Blogs</a>|
     </header>
+   
 
     {% block content %}
     

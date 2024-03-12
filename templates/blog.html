@@ -2,11 +2,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+
 <h1>Blogs Page</h1>
-
-
-    {%for blog in blogpost_list%}
-        <div><a href="{% url 'blogDetailPage' blog.pk %}">{{blog.title}}</a></div>
+<button style="border-radius: 5px;"><a href="{% url 'blog_add' %}">Add New Post</a></button>
+    {%for blogpost in blogpost_list%}
+        <div><a href="{% url 'blogDetailPage' blogpost.pk %}">{{blogpost.title}}</a>
+        </div>
     {%endfor%}
 
 {% endblock content %}

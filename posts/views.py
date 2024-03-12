@@ -6,3 +6,4 @@ from .models import Post
 class PostPageViw(ListView):
     model = Post
     template_name = "postpage.html"
+    
