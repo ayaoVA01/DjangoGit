@@ -15,8 +15,19 @@
         <a href="{% url 'contactpage' %}">Contact</a>|
         <a href="{% url 'postPage' %}">Post</a>|
         <a href="{% url 'blogPage' %}">Blogs</a>|
+        
     </header>
-   
+    {% if user.is_authenticated %}
+        <p>Hello {{user.username}}</p>
+        <form action="{%url 'logout' %}" method="post">
+
+        </form>
+    {%else %}
+    <p>Please Login</p>
+    <form action="{%url 'login' %}" method="post">
+        <button><a href="{% url 'login' %}">Login</a></button>
+    </form>
+    {%endif%}
 
     {% block content %}
     

@@ -5,4 +5,5 @@ urlpatterns = [
     path('', HomePageview.as_view(), name='homepage'),
     path('about/', AboutPageview.as_view(), name='aboutpage'),
     path('contact/', ContactPageView.as_view(), name='contactpage'),
+
 ]
