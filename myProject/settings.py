@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'myApp',
     'blog',
     'accounts.apps.AccountsConfig',
+    'whitenoise.runserver_nostatic',  
+
 ]
 
 MIDDLEWARE = [
@@ -51,6 +53,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+    
+    
 ]
 
 ROOT_URLCONF = 'myProject.urls'
@@ -121,8 +126,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
-# STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+# after then run on terminal "py manage.py collectstatic" and install "py -m pip install whitenoise"
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
@@ -131,3 +138,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # this is URL whem finish login
 LOGIN_REDIRECT_URL='homepage'
 LOGOUT_REDIRECT_URL ='homepage'
+
+#
+AUTH_USER_MODEL = 'accounts.CustomUser'
